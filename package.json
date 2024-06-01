@@ -13,6 +13,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@fastify/mysql": "^4.3.0",
     "cors": "^2.8.5",
     "fastify": "^4.27.0"
   },
