@@ -4,4 +4,4 @@ npm start
 
 ## API 叩くサンプル
 
-curl localhost:8080/ping
+curl localhost:3000

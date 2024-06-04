@@ -1,15 +1,15 @@
 import fastify from "fastify";
 
-const server = fastify();
-
-server.get("/ping", async (request, reply) => {
-  return "pong\n";
+const fas = fastify({
+  logger: true,
 });
 
-server.listen({ port: 8080 }, (err, address) => {
-  if (err) {
-    console.error(err);
-    process.exit(1);
-  }
-  console.log(`Server listening at ${address}`);
+fas.get("/", async (request, reply) => {
+  reply.type("application/json").code(200);
+  return { hello: "world" };
+});
+
+fas.listen({ port: 3000 }, (err, address) => {
+  if (err) throw err;
+  // Server is now listening on ${address}
 });
