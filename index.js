@@ -9,7 +9,7 @@ fas.get("/", async (request, reply) => {
   return { hello: "world" };
 });
 
-fas.listen({ port: 3000 }, (err, address) => {
+fas.listen({ port: 3001 }, (err, address) => {
   if (err) throw err;
   // Server is now listening on ${address}
 });
