@@ -5,8 +5,11 @@ const fastify = Fastify({
 });
 
 fastify.get("/", async (request, reply) => {
-  reply.type("application/json").code(200);
   return { hello: "world" };
+});
+
+fastify.get("/apple", async (request, reply) => {
+  return { apple: "apple" };
 });
 
 fastify.listen({ port: 3001 }, (err, address) => {
