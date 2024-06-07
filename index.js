@@ -1,15 +1,14 @@
-import fastify from "fastify";
+import Fastify from "fastify";
 
-const fas = fastify({
+const fastify = Fastify({
   logger: true,
 });
 
-fas.get("/", async (request, reply) => {
+fastify.get("/", async (request, reply) => {
   reply.type("application/json").code(200);
   return { hello: "world" };
 });
 
-fas.listen({ port: 3001 }, (err, address) => {
+fastify.listen({ port: 3001 }, (err, address) => {
   if (err) throw err;
-  // Server is now listening on ${address}
 });
