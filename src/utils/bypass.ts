@@ -1,4 +1,7 @@
-const bypass =
+import { Failure } from "../types/Failure";
+import { Result } from "../types/Result";
+
+export const bypass =
   <PreviousOk, PreviousNg extends Failure, NextOk, NextNg extends Failure>(
     func: (i: PreviousOk) => Result<NextOk, NextNg>
   ): ((
