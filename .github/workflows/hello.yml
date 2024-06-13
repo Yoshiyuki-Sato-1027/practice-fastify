@@ -1,7 +1,7 @@
-name: Hello, World!
-on: push
+name: Hello, World! # ワークフローの名前
+on: [push, pull_request] # イベント名 プッシュされるときにワークフローが走る
 
-jobs:
+jobs: # ジョブの定義始まる
   build:
     name: Greeting
     runs-on: ubuntu-latest
