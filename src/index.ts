@@ -1,4 +1,16 @@
 import fastify from "fastify";
+import { pipe } from "ramda";
+import { bypass } from "./utils/bypass";
+import { Result } from "./types/Result";
+import { match } from "ts-pattern";
+
+const handleTest = (): Result<{ data: string }, { errorCode: number }> => {
+  return { success: true, data: { data: "" } };
+};
+
+function handleUpdateUser(): void {
+  pipe(bypass(handleTest));
+}
 
 const server = fastify();
 
