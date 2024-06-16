@@ -1,5 +1,5 @@
 name: Hello, World! # ワークフローの名前
-on: [push, pull_request] # イベント名 プッシュされるときにワークフローが走る
+on: [push] # イベント名 プッシュされるときにワークフローが走る
 
 jobs: # ジョブの定義始まる
   build:
