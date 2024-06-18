@@ -21,7 +21,9 @@
     "ts-pattern": "^5.2.0"
   },
   "devDependencies": {
+    "@secretlint/secretlint-rule-preset-recommend": "^8.2.4",
     "@types/node": "^20.14.2",
+    "secretlint": "^8.2.4",
     "ts-node-dev": "^2.0.0",
     "typescript": "^5.4.5"
   }
