@@ -1,21 +1,29 @@
 import fastify from "fastify";
-import { pipe } from "ramda";
-import { bypass } from "./utils/bypass";
-import { Result } from "./types/Result";
-import { match } from "ts-pattern";
-
-const handleTest = (): Result<{ data: string }, { errorCode: number }> => {
-  return { success: true, data: { data: "" } };
-};
-
-function handleUpdateUser(): void {
-  pipe(bypass(handleTest));
-}
 
 const server = fastify();
+const opts = {
+  schema: {
+    response: {
+      200: {
+        type: "object",
+        required: ["value", "code"],
+        properties: {
+          value: { type: "string" },
+          code: { type: "number" },
+        },
+      },
+    },
+  },
+};
+server.get("/users", opts, function (req, rep) {
+  rep.send({
+    value: "hoge",
+    code: 123,
+  });
+});
 
-server.get("/", async (request, reply) => {
-  return "hello world";
+server.get("/", opts, async (request, reply) => {
+  return "handleUpdateUser();";
 });
 
 server.listen({ port: 8080 }, (err, address) => {
