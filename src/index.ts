@@ -6,15 +6,16 @@ const opts = {
     response: {
       200: {
         type: "object",
-        required: ["value", "code"],
+        required: ["value", "code"], // 必須項目
         properties: {
-          value: { type: "string" },
-          code: { type: "number" },
+          value: { type: "string" }, // 型の指定
+          code: { type: "number" }, // 型の指定
         },
       },
     },
   },
 };
+// 型と違うものを送ると500エラー
 server.get("/users", opts, function (req, rep) {
   rep.send({
     value: "hoge",
