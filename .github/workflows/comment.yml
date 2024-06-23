@@ -1,0 +1,10 @@
+name: comment test
+on:
+  issue_comment:
+    types: [created]
+
+jobs: # ジョブの定義始まる
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: echo comment
