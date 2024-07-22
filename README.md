@@ -6,6 +6,10 @@ npm start
 
 curl localhost:3000
 
+# ts-pattern の Doc
+
+https://github.com/gvergnaud/ts-pattern
+
 # docker コマンド
 
 イメージのビルド
