@@ -1,4 +1,9 @@
 import fastify from "fastify";
+import { Brand, CreateBrandType } from "./utils/createBrand";
+
+type UserId = Brand<string, "UserId">;
+const userId: UserId = CreateBrandType<string, "UserId">("userId");
+console.log("userId", userId);
 
 const server = fastify();
 const opts = {
