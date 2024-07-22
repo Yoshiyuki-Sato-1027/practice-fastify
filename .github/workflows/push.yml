@@ -1,8 +1,0 @@
-name: push test # ワークフローの名前
-on: [push] # イベント名 プッシュされるときにワークフローが走る
-
-jobs: # ジョブの定義始まる
-  build:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: echo push
