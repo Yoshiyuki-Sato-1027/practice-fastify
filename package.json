@@ -18,6 +18,7 @@
     "@types/ramda": "^0.30.0",
     "cors": "^2.8.5",
     "fastify": "^4.27.0",
+    "json-schema-to-ts": "^3.1.1",
     "ramda": "^0.30.1",
     "ts-pattern": "^5.2.0"
   },

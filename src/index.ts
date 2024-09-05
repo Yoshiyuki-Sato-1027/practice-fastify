@@ -1,4 +1,5 @@
 import fastify from "fastify";
+import { JSONSchema } from "json-schema-to-ts";
 
 const server = fastify();
 const opts = {
@@ -14,7 +15,7 @@ const opts = {
       },
     },
   },
-};
+} as const satisfies JSONSchema;
 // 型と違うものを送ると500エラー
 server.get("/users", opts, function (req, rep) {
   rep.send({
